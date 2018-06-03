@@ -29,12 +29,13 @@ section {
     /* background: lightgray; */
     margin: 10px  auto;
     width: 80%;
-    height: 80%;  
+    height: auto; 
     border-radius: 10px;
     text-align: center;
+    padding: 15px 0;
 }
 
-button {
+.startButton {
     /* This is the start button */
     height: 100px;
     width: 200px;
@@ -44,4 +45,20 @@ button {
     font-size: 30px;
     text-shadow: 1px 1px #BF0A30;
 }
-             
+   
+.optionBtn {
+    /* This is the start button */
+    height: 75px;
+    width: 400px;
+    background-color: #002868 ;
+    color: lightgray;
+    border-radius: 10px;
+    font-size: 30px;
+    text-shadow: 1px 1px #BF0A30;
+}
+
+h1 {
+    font-size: 35px;
+}
+
+                   
