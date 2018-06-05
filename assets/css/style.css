@@ -11,6 +11,9 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
+    border: 2px;
+    border-style: solid;
+    border-color: #002868;
 }
 
 header {
@@ -21,7 +24,7 @@ header {
     margin: 0 auto; 
     width: 80%;
     font-size: 35px;
-    text-shadow: 2px 2px #BF0A30;
+    text-shadow: 2px 2px #002868;
 }
 
 section {
@@ -48,8 +51,9 @@ section {
    
 .optionBtn {
     /* This is the start button */
-    height: 75px;
-    width: 400px;
+    height: 100px;
+    width: 60%;
+    margin: 0 auto;
     background-color: #002868 ;
     color: lightgray;
     border-radius: 10px;
@@ -59,6 +63,15 @@ section {
 
 h1 {
     font-size: 35px;
+    color: lightgray;
 }
 
-                   
+.currentQuestion {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #BF0A30;
+    color: lightgray;
+    border-radius: 10px;
+    font-size: 30px;
+    text-shadow: 1px 1px #002868;
+}

@@ -21,20 +21,41 @@
         <button class="startButton" type="button">Start</button>
         <div class="mainDiv">
             <div class="currentQuestion">
-                <h1>Question Goes Here?</h1>
+                <!--Question will be randomly generated in JS-->
             </div>
             <div class="optionOne">
-                <button class="optionBtn" type="button">Start</button>
+                <button class="optionBtn" type="button">
+                    <p id="optionBtnOneText"></p>
+                </button>
             </div>
             <div class="optionTwo">
-                <button class="optionBtn" type="button">Start</button>
+                <button class="optionBtn" type="button">
+                    <p id="optionBtnTwoText"></p>
+                </button>
             </div>
             <div class="optionThree">
-                <button class="optionBtn" type="button">Start</button>
+                <button class="optionBtn" type="button">
+                    <p id="optionBtnThreeText"></p>
+                </button>
             </div>
             <div class="optionFour">
-                <button class="optionBtn" type="button">Start</button>
+                <button class="optionBtn" type="button">
+                    <p id="optionBtnFourText"></p>
+                </button>
             </div>
+        </div>
+        <div id="fixed-div-correct">
+            <img src="assets/images/correct.jpg">
+        </div>
+        <div id="fixed-div-wrong">
+            <img src="assets/images/wrong.jpg">
+        </div>
+        <div id="gameOver">
+            <h1>Game Over</h1>
+            <hr>
+            <p id="guessesCorrect">Guesses correct:</p>
+
+            <p id="guessesIncorrect">Guesses incorrect:</p>
         </div>
     </section>
     <script src="assets/javascript/app.js"></script>
