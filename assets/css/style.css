@@ -5,6 +5,7 @@ body, html {
 .bg-image { 
     /* The image used for heading background */
     background-image: url(../images/americanFlag.jpg);
+    
 
     /* Center, scale, and round the image nicely */
     background-position: center;
@@ -16,10 +17,24 @@ body, html {
     border-color: #002868;
 }
 
+.bg-image2 { 
+    /* The image used for heading background */
+    background-image: url(../images/golden.jpg);
+
+    /* Center, scale, and round the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    border: 2px;
+    border-style: solid;
+    border-color: #BF0A30;
+}
+
 header {
     /* This is where the american flag/title reside */
     border-radius: 25px;
-    color: lightgray;
+    color: white;
     text-align: center;
     margin: 0 auto; 
     width: 80%;
@@ -36,6 +51,7 @@ section {
     border-radius: 10px;
     text-align: center;
     padding: 15px 0;
+    background-image: url(/assets/images/washington.jpg);
 }
 
 .startButton {
@@ -63,15 +79,21 @@ section {
 
 h1 {
     font-size: 35px;
-    color: lightgray;
+    color: white;
 }
 
 .currentQuestion {
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 45px auto;
     background-color: #BF0A30;
-    color: lightgray;
+    color: white;
     border-radius: 10px;
-    font-size: 30px;
+    font-size: 35px;
     text-shadow: 1px 1px #002868;
+}
+
+#fixed-div {
+    position: fixed;
+    top: 1em;
+    right: 1em;
 }

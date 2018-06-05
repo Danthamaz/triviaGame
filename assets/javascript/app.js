@@ -13,17 +13,17 @@ $(document).ready(function () {
     $(".startButton").on("click", function () {
         // console.log("yes!")
         $(".startButton").hide();
-        $("section").css({
-            "background-color": "#00FF00",
-            "border": "2px",
-            "border-style": "solid",
-            "border-color": "#BF0A30"
-        });
+        // $("section").css({
+        //     "background-color": "#00FF00",
+        //     "border": "2px",
+        //     "border-style": "solid",
+        //     "border-color": "#BF0A30",
+        // });
         $(".mainDiv").show();
         startGame();
     });
 
-// Question & answer arrays, indexes match each other for easy access
+    // Question & answer arrays, indexes match each other for easy access
     var questionArray = [
         "What is the northeastern most state of the USA?",
         "Where is the lowest point of the western hemisphere?",
@@ -63,17 +63,13 @@ $(document).ready(function () {
         $("#optionBtnFourText").text(answerArray[questionCounter][3]);
         questionCounter = 0;
         correctCounter = 0;
-        incorrectCounter = 0;       
+        incorrectCounter = 0;
     }
 
     function nextQuestion() {
         showMain();
         if (questionCounter > 6) {
-            console.log("Done");
-            hideMain();
-            $("#gameOver").show();
-            $("#guessesCorrect").append(correct);
-            $("#guessesIncorrect").append(incorrect);
+            endGame();
         } else {
             $(".currentQuestion").html("<h1>" + questionArray[questionCounter] + "</h1>");
             $("#optionBtnOneText").text(answerArray[questionCounter][0]);
@@ -82,6 +78,20 @@ $(document).ready(function () {
             $("#optionBtnFourText").text(answerArray[questionCounter][3]);
         };
     };
+
+    function endGame() {
+        console.log("Done");
+        hideMain();
+        $("#guessesCorrect").append(correct);
+        $("#guessesIncorrect").append(incorrect);
+        $("#gameOver").css({
+            "background-color": "#00FF00",
+            "border": "2px",
+            "border-style": "solid",
+            "border-color": "#BF0A30",
+        });
+        $("#gameOver").show();
+    }
 
     function correctAnswer() {
         hideMain();
@@ -113,19 +123,19 @@ $(document).ready(function () {
     };
 
     function hideMain() {
-// way to hide content
+        // way to hide content
         $(".currentQuestion").hide();
         $(".optionBtn").hide();
     }
 
     function showMain() {
-// way to show content
+        // way to show content
         $(".currentQuestion").show();
         $(".optionBtn").show();
     }
 
-// Four click functions to respond to user input.. Need to find a way to combine into less code
-    $("#optionBtnOneText").click(function() {
+    // Four click functions to respond to user input.. Need to find a way to combine into less code
+    $("#optionBtnOneText").click(function () {
         if ((answerArray[questionCounter][0]) == correctArray[questionCounter]) {
             //console.log('correct');
             correctAnswer();
@@ -135,7 +145,7 @@ $(document).ready(function () {
         };
         questionCounter++;
     });
-    $("#optionBtnTwoText").click(function() {
+    $("#optionBtnTwoText").click(function () {
         if ((answerArray[questionCounter][1]) == correctArray[questionCounter]) {
             //console.log('correct');
             correctAnswer();
@@ -145,7 +155,7 @@ $(document).ready(function () {
         };
         questionCounter++;
     });
-    $("#optionBtnThreeText").click(function() {
+    $("#optionBtnThreeText").click(function () {
         if ((answerArray[questionCounter][2]) == correctArray[questionCounter]) {
             //console.log('correct');
             correctAnswer();
@@ -155,7 +165,7 @@ $(document).ready(function () {
         };
         questionCounter++;
     });
-    $("#optionBtnFourText").click(function() {
+    $("#optionBtnFourText").click(function () {
         if ((answerArray[questionCounter][3]) == correctArray[questionCounter]) {
             //console.log('correct');
             correctAnswer();
