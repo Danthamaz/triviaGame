@@ -4,11 +4,15 @@ $(document).ready(function () {
     var incorrectCounter = 0;
     var correct = 0;
     var incorrect = 0;
+    var secondsLeft = 20;
+    var intervalId;
+
     // Hide all content in mainDiv until start button is pushed
     $(".mainDiv").hide();
     $("#fixed-div-correct").hide()
     $("#fixed-div-wrong").hide()
     $("#gameOver").hide();
+    $(".activeTimer").hide();
     // Function below is performed when start button is clicked:
     $(".startButton").on("click", function () {
         // console.log("yes!")
@@ -64,10 +68,12 @@ $(document).ready(function () {
         questionCounter = 0;
         correctCounter = 0;
         incorrectCounter = 0;
+        startCountdown();
     }
 
     function nextQuestion() {
         showMain();
+        startCountdown();
         if (questionCounter > 6) {
             endGame();
         } else {
@@ -76,6 +82,7 @@ $(document).ready(function () {
             $("#optionBtnTwoText").text(answerArray[questionCounter][1]);
             $("#optionBtnThreeText").text(answerArray[questionCounter][2]);
             $("#optionBtnFourText").text(answerArray[questionCounter][3]);
+            startCountdown();
         };
     };
 
@@ -90,12 +97,14 @@ $(document).ready(function () {
     function correctAnswer() {
         hideMain();
         showCorrect();
+        $(".activeTimer").hide();
         correct++;
     };
 
     function incorrectAnswer() {
         hideMain();
         showWrong();
+        $(".activeTimer").hide();
         incorrect++;
     };
 
@@ -126,7 +135,31 @@ $(document).ready(function () {
         // way to show content
         $(".currentQuestion").show();
         $(".optionBtn").show();
-    }
+    };
+
+    function startCountdown() {
+        // 20 second timer for questions
+        secondsLeft = 20;
+        $(".activeTimer").show();
+        $(".activeTimer").html("<h2>" + secondsLeft + " seconds remaining.</h2>");
+        clearInterval(intervalId);
+        intervalId = setInterval(decrement, 1000);
+    };
+
+    function decrement() {
+        secondsLeft--;
+        $(".activeTimer").html("<h2>" + secondsLeft + " seconds remaining.</h2>");
+
+        if (secondsLeft === 0) {
+            stop();
+            incorrectAnswer();
+            questionCounter++;
+        };
+    };
+
+    function stop() {
+        clearInterval(intervalId);
+    };
 
     // Four click functions to respond to user input.. Need to find a way to combine into less code
     $("#optionBtnOneText").click(function () {
