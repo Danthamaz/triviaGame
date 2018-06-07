@@ -92,6 +92,8 @@ $(document).ready(function () {
         $("#guessesCorrect").append(correct);
         $("#guessesIncorrect").append(incorrect);
         $("#gameOver").show();
+        $(".activeTimer").hide();
+        stop();
     }
 
     function correctAnswer() {
