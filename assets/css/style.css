@@ -19,7 +19,7 @@ body, html {
 
 .bg-image2 { 
     /* The image used for heading background */
-    background-image: url(../images/golden.jpg);
+    background-image: url(../images/blueFlag.jpg);
 
     /* Center, scale, and round the image nicely */
     background-position: center;
