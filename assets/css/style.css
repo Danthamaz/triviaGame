@@ -128,3 +128,19 @@ h1 {
 .activeTimer {
     text-align: center;
 }
+
+@media only screen and (max-width: 600px) {
+    header {
+        width: 95%;
+    }
+    section {
+        width: 95%;
+        padding: 0px;
+    }
+    .currentQuestion {
+        width: 95%;
+    }
+    .optionBtn {
+        width: 95%;
+    }
+}
