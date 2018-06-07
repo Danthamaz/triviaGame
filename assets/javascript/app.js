@@ -84,12 +84,6 @@ $(document).ready(function () {
         hideMain();
         $("#guessesCorrect").append(correct);
         $("#guessesIncorrect").append(incorrect);
-        $("#gameOver").css({
-            "background-color": "#00FF00",
-            "border": "2px",
-            "border-style": "solid",
-            "border-color": "#BF0A30",
-        });
         $("#gameOver").show();
     }
 
